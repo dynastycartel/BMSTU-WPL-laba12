@@ -12,7 +12,7 @@ class PalindromesController < ApplicationController
     end
     if flash.empty?
       num = params[:num].to_i
-      get_palindromes(num)
+      @result = PalindromesController.get_palindromes(num)
     else
       redirect_to '/palindromes/input'
     end
@@ -22,6 +22,6 @@ class PalindromesController < ApplicationController
     @arr = (1..num).select { |i| 
       i.to_s == i.to_s.reverse && i.to_s(2) == i.to_s(2).reverse
     }
-    @result = Hash[@arr.zip @arr.map { |el| el.to_s(2) }]
+    result = Hash[@arr.zip @arr.map { |el| el.to_s(2) }]
   end
 end
