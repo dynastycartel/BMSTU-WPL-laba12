@@ -1,0 +1,14 @@
+<h2 align="center">Palindromes output</h2>
+
+<table>
+	<tr>
+		<th>Десятичная форма</th>
+		<th>Двоичная форма</th>
+	</tr>
+		<% @result.each do |key, value| %>
+			<tr>
+				<td><%= key %></td>
+				<td><%= value %></td>
+			</tr>
+		<% end %>
+</table>

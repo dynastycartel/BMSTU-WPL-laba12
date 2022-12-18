@@ -1,0 +1,15 @@
+<h2 align="center">Palindromes input</h2>
+
+<% unless session[:user_id].nil? %>
+	<%= form_with url: '/palindromes/output', method: :get do |form| %>
+		<p>
+			<%= form.label 'Enter the number', class: 'form-label' %>
+			<%= form.number_field :num, class: 'form-control', id: 'num-input' %>
+		</p>
+		<p>
+			<%= form.submit 'Submit', class: 'btn btn-primary' %>
+		</p>
+	<% end %>
+<% else %>
+	<p id="loginmsg">In order to be able to use this service, you have to be signed in.</p>
+<% end %>

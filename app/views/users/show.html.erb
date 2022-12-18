@@ -1,0 +1,11 @@
+<h2 align="center">All users</h2>
+
+<% users = User.all %>
+<% users.each do |user| %>
+	<p>
+		<%= user.email %>
+		 --- 
+		<%= user.login %><br/>
+		<%= link_to 'Delete user', '/users/destroy', data: {turbo_method: :delete} %>
+	</p>
+<% end %>
